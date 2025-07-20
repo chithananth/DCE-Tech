@@ -1,0 +1,204 @@
+.services-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1550px;
+  margin: auto;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider-3d {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective: 1500px;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  position: absolute;
+  width: 350px;
+  height: 390px;
+  transition: transform 0.8s ease, opacity 0.6s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  overflow: hidden;
+}
+
+.card.center {
+  transform: translateX(0) scale(1.1);
+  z-index: 5;
+  opacity: 1;
+  animation: centerReveal 0.6s ease forwards;
+}
+@keyframes centerReveal {
+  0% {
+    transform: scale(0.5) rotateY(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.card.left {
+  transform: translateX(-240px) rotateY(25deg) scale(0.95);
+  z-index: 4;
+  opacity: 0.9;
+}
+
+.card.far-left {
+  transform: translateX(-460px) rotateY(20deg) scale(0.9);
+  z-index: 3;
+  opacity: 0.7;
+}
+
+.card.right {
+  transform: translateX(240px) rotateY(-25deg) scale(0.95);
+  z-index: 4;
+  opacity: 0.9;
+}
+
+.card.far-right {
+  transform: translateX(460px) rotateY(-20deg) scale(0.9);
+  z-index: 3;
+  opacity: 0.7;
+}
+
+.card.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.6);
+}
+
+/* For center card full content */
+.card-content.full {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--cardTopOverlay);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-top {
+  flex: 0 0 50%;
+  background-position: center;
+  animation: bgPan 10s linear infinite alternate;
+  background-size: 120% auto;
+}
+@keyframes bgPan {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: bottom right;
+  }
+}
+.card-bottom {
+  flex: 1;
+  padding: 1rem;
+  background: var(--cardBottomBackground);
+  color: var(--cardBottomText);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeSlideUp 1s ease forwards;
+}
+.card-bottom h2 {
+  font-weight: 700;
+  color: var(--highlightColor);
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* For side cards (image only) */
+.card-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+/* Navigation buttons */
+.nav {
+  background: var(--navButtonBackground);
+  box-shadow: 0 5px 10px var(--navButtonShadow);
+  color: var(--navButtonText);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav.left {
+  position: absolute;
+  left: 30px;
+}
+
+.nav.right {
+  position: absolute;
+  right: 30px;
+}
+.services-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-top: 1rem;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--servicestitle);
+  letter-spacing: 0.5px;
+}
+
+.services-subtitle {
+  font-size: 1.1rem;
+  color: var(--servicessubtitle);
+  margin-top: 0.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-divider {
+  margin: 1.2rem auto 0;
+  width: 60px;
+  height: 4px;
+  background: var(--servicesdivider);
+  border-radius: 2px;
+}
+.card-bottom p {
+  position: relative;
+  padding-left: 1rem;
+  border-left: 4px solid var(--paragraphBorder);
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}

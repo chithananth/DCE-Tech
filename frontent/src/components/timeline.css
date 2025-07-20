@@ -1,0 +1,196 @@
+.timeline-section {
+  padding: 100px 0;
+  overflow-x: hidden;
+  margin-top: 8%; 
+}
+
+.timeline-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.timeline-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--timelinetitle);
+}
+
+.timeline-subtitle {
+  font-size: 1.1rem;
+  color: var(--timelinesubtitle);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.timeline-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--timelinedivider);
+  border-radius: 2px;
+  margin: 1.2rem auto 0;
+}
+
+/* === Timeline Structure === */
+.timeline-container {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: var(--lineColor);
+  height: 0;
+  z-index: 0;
+  transition: height 0.5s ease;
+}
+
+/* === Cards === */
+.timeline-event {
+  position: relative;
+  width: 45%;
+  margin: 3rem 0;
+  opacity: 0;
+  transform: scale(0.6);
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.timeline-event.left {
+  left: 0;
+}
+
+.timeline-event.right {
+  left: 55%;
+}
+
+.timeline-event.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === Card Portal Left === */
+.card-portal-left {
+  animation: cardPortalLeft 1s ease-out forwards;
+  transform-origin: center center;
+}
+
+@keyframes cardPortalLeft {
+  0% {
+    transform: scale(0) rotate(15deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(-5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* === Card Portal Right === */
+.card-portal-right {
+  animation: cardPortalRight 1s ease-out forwards;
+  transform-origin: center center;
+}
+
+@keyframes cardPortalRight {
+  0% {
+    transform: scale(0) rotate(-15deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* === Image Drops from Top === */
+.card-portal-left .event-image,
+.card-portal-right .event-image {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideImageTop 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes slideImageTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Content Slides In === */
+.card-portal-left .event-content {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideContentLeft 0.6s ease-out 0.6s forwards;
+}
+
+.card-portal-right .event-content {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideContentRight 0.6s ease-out 0.6s forwards;
+}
+
+@keyframes slideContentLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideContentRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === Card Box === */
+.event-card {
+  background: var(--eventBg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--eventShadow);
+  overflow: hidden;
+}
+
+.event-image {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+
+.event-content {
+  padding: 1.2rem;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--titleColor);
+}
+
+.event-desc {
+  color: var(--descColor);
+  line-height: 1.5;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .timeline-event {
+    width: 100% !important;
+    left: 0 !important;
+  }
+
+  .timeline-line {
+    transform: none;
+  }
+}

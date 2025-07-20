@@ -1,0 +1,47 @@
+.map-section {
+  background: var(--mapbackground);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.map-header {
+  margin-bottom: 2rem;
+}
+
+.map-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--maptitle);
+  letter-spacing: 0.5px;
+}
+
+.map-subtitle {
+  font-size: 1.1rem;
+  color: var(--mapsubtitle);
+  margin-top: 0.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-divider {
+  margin: 1.2rem auto 0;
+  width: 60px;
+  height: 4px;
+  background: var(--mapdivider);
+  border-radius: 2px;
+}
+
+.map-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}

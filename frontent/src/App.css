@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+* {
+  font-family: 'Lexend', sans-serif;
+}
+
+/* === GLOBAL IMPROVEMENTS === */
+
+/* Add generic mobile responsiveness improvements */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .about-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .about-content p,
+  .about-content button,
+  .carousel-subheading,
+  .event-desc,
+  .section-subtitle,
+  .lapdesc,
+  .laplink,
+  .desc,
+  .link {
+    font-size: 0.9rem;
+  }
+
+  .carousel-typewriter {
+    font-size: 2.3rem;
+  }
+
+  .carousel-thumbnails img {
+    width: 65px;
+    height: 45px;
+  }
+
+  .navbar-logo img {
+    height: 40px;
+  }
+
+  .navbar {
+    padding: 1.5rem 1rem;
+  }
+
+  .carousel-buttons a button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    width: 270px;
+    height: 350px;
+  }
+
+  .card-content.full {
+    font-size: 0.9rem;
+  }
+
+  .event-title {
+    font-size: 1.2rem;
+  }
+
+  .timeline-title {
+    font-size: 2.2rem;
+  }
+
+  .timeline-event {
+    margin: 2rem 0;
+  }
+
+  .lapline-description,
+  .lapline-link,
+  .line-description,
+  .line-link {
+    gap: 0.3rem;
+  }
+
+  .dot,
+  .lapdot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* iPhone SE & very small devices */
+@media screen and (max-width: 360px) {
+  .about-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-typewriter {
+    font-size: 1.8rem;
+  }
+
+  .carousel-subheading {
+    font-size: 0.95rem;
+  }
+
+  .carousel-thumbnails img {
+    width: 55px;
+    height: 40px;
+  }
+
+  .card {
+    width: 240px;
+    height: 320px;
+  }
+
+  .event-title {
+    font-size: 1rem;
+  }
+
+  .section-title,
+  .timeline-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle,
+  .timeline-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .lapdesc,
+  .desc {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .laplink,
+  .link {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
